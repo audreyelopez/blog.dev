@@ -11,19 +11,40 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+// Route::get('/', function()
+// {
+// 	return View::make('hello');
+// });
 
-Route::get('/resume', function()
-{
-    return 'This is the resume';
-});
+// Route::get('/', 'HomeController@showWelcome');
+// {
+// 	return View::make('hello');
+// });
 
-Route::get('/portfolio', function()
+
+Route::get('/resume', 'HomeController@showResume'); 
+
+
+
+Route::get('/', 'HomeController@showWelcome');
+
+
+Route::get('/', 'HomeController@showPortfolio');
+
+
+Route::resource('posts', 'PostsController');
+
+Route::get('/create', 'PostsController@store'); 
+
+// 'stock' route; original "get route" 
+// Route::get('/portfolio', function()
+// {
+//     return View::make('portfolio');
+// });
+
+Route::get('/sayhello/{name}', function($name)
 {
-    return 'This is the portfolio';
+	return View::make('my-first-view');
 });
 
 // alternate code to 
@@ -48,7 +69,10 @@ Route::get('/rolldice/{guess}', function($guess)
 {
 	$random = mt_rand(1, 6);
 	// Within the route, return a random number between 1 and 6.
+	// an array is created below to bring about variables "$guess" and "$random"
 	$data = ['guess' => $guess , 'random' => $random];
 
+	// create 'roll-dice' view using information from above array, "$data" array. 
+	// Return this newly created information to user
     return View::make('roll-dice')->with($data);
 });
