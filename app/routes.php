@@ -21,31 +21,58 @@
 // 	return View::make('hello');
 // });
 
+Route::get('/', function()
+{
+    return View::make('hello');
+})->before('auth.basic');
 
-Route::get('/resume', 'HomeController@showResume'); 
 
+Route::get('orm-test', function ()
+{
 
+$post = Post::find(4);
+$post->title = "Post number Four";
+$post->save();
+return $post;
 
-Route::get('/', 'HomeController@showWelcome');
+});
 
+// check below route for directions to the Create View 
+Route::get('/create', function()
+{
+	return View::make('create');
+});
+
+// Below code is a correct path to the 
+Route::get('/resume', 'HomeController@showResume');
+// where are the methods below being declared? 
+// Route::get('/resume', 'HomeController@showResume'); 
+
+// below reoute::action is not defined 
+// Route::action('/resume', 'HomeController@showResume');
 
 Route::get('/', 'HomeController@showPortfolio');
 
 
+Route::get('/', 'HomeController@showWelcome');
+
+// =======================================
+
 Route::resource('posts', 'PostsController');
 
-Route::get('/create', 'PostsController@store'); 
+// Route::get('/create', 'PostsController@store'); 
+
 
 // 'stock' route; original "get route" 
 // Route::get('/portfolio', function()
 // {
 //     return View::make('portfolio');
 // });
-
-Route::get('/sayhello/{name}', function($name)
-{
-	return View::make('my-first-view');
-});
+// =========================================
+// Route::get('/sayhello/{name}', function($name)
+// {
+// 	return View::make('my-first-view');
+// });
 
 // alternate code to 
 // Route::get('/', function()
@@ -63,7 +90,8 @@ Route::get('/sayhello/{name}', function($name)
 	// ('returns' end the code) -the example below only shows another option
 	// return "Hello $name! It's $day.";
 // });
-
+// =====================================
+// **roll-dice code below**
 // Create a route that responds to a GET request on the path /rolldice.
 Route::get('/rolldice/{guess}', function($guess)
 {

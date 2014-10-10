@@ -1,7 +1,6 @@
 @extends('layouts.master')
 <!-- @extends tells what file you're wanting all of this info to be injected into -->
-<!-- if your output says literally '@extends('layouts.master')
-' or whatever else the name of your file is, instead of your real view, it's bc it's not picking up the file; probably the file is not written correctly here, bc it's not linking properly -->
+<!-- if your output literally says '@extends('layouts.master')' or other file name used, instead of your real view, it's bc it's not picking up the file; probably the file is not written correctly here, bc it's not linking properly -->
 
 <!-- if above file is included, your layout will automatically load into this file as well -->
 
