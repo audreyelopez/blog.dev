@@ -136,7 +136,8 @@
         <div class="col-lg-4">
            <img class="img-circle" src="/img/blow_your_mind.jpg" alt="Third circle" style="width: 140px; height: 140px;">
           <h2>More</h2>
-          <p>The place where I <strong><em>really</em></strong> blow your  mind. Mainly, where I come and talk completely out of my sass<br>
+          <p>The place where I <strong><em>really</em></strong> blow your  mind.
+             <br>
              Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
